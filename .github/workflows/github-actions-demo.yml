@@ -18,5 +18,8 @@ jobs:
       - name: List files in the repository
         run: |
           cd ${{ github.workspace }}/src &&
-          cat ~/.netrc <<EOF HELLO EOF
+          cat > ~/.netrc <<EOF HELLO EOF
+      - name: READ netrc
+        run: |
+          cat ~/.netrc
       - run: echo "🍏 This job's status is ${{ job.status }}."
