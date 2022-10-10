@@ -29,7 +29,7 @@ jobs:
             machine git.heroku.com
               login $HEROKU_EMAIL
               password $HEROKU_API_KEY
-          EOf
+          EOF
         env:
           HEROKU_EMAIL: my_heroku_email_from_secrets
           HEROKU_API_KEY: my_heroku_api_key_for_account_from_secrets
