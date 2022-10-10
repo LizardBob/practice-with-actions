@@ -14,7 +14,7 @@ jobs:
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: Create .netrc file
         run: |
-          touch .netrc && ls && pwd
+          touch .netrc && ls -a && pwd
       - name: List files in the repository
         run: |
           cd ${{ github.workspace }}/src &&
