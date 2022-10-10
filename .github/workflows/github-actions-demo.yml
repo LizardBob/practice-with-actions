@@ -14,12 +14,17 @@ jobs:
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
         run: |
-          touch .netrc && 
-          cd ${{ github.workspace }}/src &&
-          cat > .netrc <<EOF
+          cd ${{ github.workspace }} && ls
+      - name: Create netrc
+        run: |
+          touch .netrc && pwd
+          
+      - name: Update netrc
+        run: |
+          cat > .netrc << EOF
           HELLO
           EOF
       - name: READ netrc
         run: |
-          cat ~/.netrc
+          cat ~/.netrc && pwd
       - run: echo "🍏 This job's status is ${{ job.status }}."
