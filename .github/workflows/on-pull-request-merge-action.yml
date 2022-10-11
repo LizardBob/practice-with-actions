@@ -1,0 +1,14 @@
+name: GitHubAction-On-Pull-Request-Merge
+run-name: ${{ github.actor }} merged PR 🫡
+on:
+  pull_request_target:
+    types:
+      - closed
+    branches: [ "master", "main" ]
+jobs:
+  if_merged:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+    - run: | 
+        echo The PR was merged! 🚀 🏎 🪅
