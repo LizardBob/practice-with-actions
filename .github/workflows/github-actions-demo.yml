@@ -14,7 +14,7 @@ jobs:
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: Check if we have heroku installed
         run: |
-          heroku --version
+          heroku --help
       - name: List files in the repository
         run: |
           cd ${{ github.workspace }} && ls
